@@ -65,5 +65,11 @@ namespace CrudBasico
             var objDados = new Dados();
             objDados.Excluir(Convert.ToInt32(txtExcluir.Text));
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            frm.ShowDialog();
+        }
     }
 }

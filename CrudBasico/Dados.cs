@@ -77,7 +77,7 @@ namespace CrudBasico
                         while (objDataReader.Read())
                         {
                             var objClientes = new Clientes();
-                            objClientes.IdCliente = Convert.ToInt32(objDataReader["IdClientes"].ToString());
+                            objClientes.IdCliente = Convert.ToInt32(objDataReader["IdCliente"].ToString());
                             objClientes.Nome = objDataReader["Nome"].ToString();
                             objClientes.Endereco = objDataReader["Endereco"].ToString();
                             objClientes.Sexo = objDataReader["Sexo"].ToString();

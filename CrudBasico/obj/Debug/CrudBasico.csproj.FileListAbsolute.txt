@@ -8,3 +8,4 @@ C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.csproj.Ge
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.csproj.CoreCompileInputs.cache
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.exe
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.pdb
+C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.frmConsultar.resources

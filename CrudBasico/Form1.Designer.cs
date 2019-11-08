@@ -31,18 +31,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
+            this.rbtMasculino = new System.Windows.Forms.RadioButton();
             this.rbtFeminino = new System.Windows.Forms.RadioButton();
             this.btnGravar = new System.Windows.Forms.Button();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.rbtMasculino = new System.Windows.Forms.RadioButton();
             this.gpbStatus = new System.Windows.Forms.GroupBox();
             this.rbtInativo = new System.Windows.Forms.RadioButton();
             this.rbtAtivo = new System.Windows.Forms.RadioButton();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gpbSexo.SuspendLayout();
             this.gpbStatus.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,17 @@
             this.gpbSexo.TabIndex = 6;
             this.gpbSexo.TabStop = false;
             this.gpbSexo.Text = "Sexo";
+            // 
+            // rbtMasculino
+            // 
+            this.rbtMasculino.AutoSize = true;
+            this.rbtMasculino.Location = new System.Drawing.Point(116, 22);
+            this.rbtMasculino.Name = "rbtMasculino";
+            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasculino.TabIndex = 1;
+            this.rbtMasculino.TabStop = true;
+            this.rbtMasculino.Text = "Masculino";
+            this.rbtMasculino.UseVisualStyleBackColor = true;
             // 
             // rbtFeminino
             // 
@@ -128,17 +140,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Telefone:";
             // 
-            // rbtMasculino
-            // 
-            this.rbtMasculino.AutoSize = true;
-            this.rbtMasculino.Location = new System.Drawing.Point(116, 22);
-            this.rbtMasculino.Name = "rbtMasculino";
-            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rbtMasculino.TabIndex = 1;
-            this.rbtMasculino.TabStop = true;
-            this.rbtMasculino.Text = "Masculino";
-            this.rbtMasculino.UseVisualStyleBackColor = true;
-            // 
             // gpbStatus
             // 
             this.gpbStatus.Controls.Add(this.rbtInativo);
@@ -189,11 +190,22 @@
             this.txtExcluir.Size = new System.Drawing.Size(68, 20);
             this.txtExcluir.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(101, 299);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 29);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "FRM Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 311);
+            this.ClientSize = new System.Drawing.Size(314, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gpbStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEndereco);
@@ -233,6 +245,7 @@
         private System.Windows.Forms.RadioButton rbtAtivo;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txtExcluir;
+        private System.Windows.Forms.Button button1;
     }
 }
 
