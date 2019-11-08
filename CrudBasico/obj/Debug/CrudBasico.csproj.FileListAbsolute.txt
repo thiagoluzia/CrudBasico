@@ -2,10 +2,10 @@ C:\Users\thiag\source\repos\CrudBasico\CrudBasico\bin\Debug\CrudBasico.exe.confi
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\bin\Debug\CrudBasico.exe
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\bin\Debug\CrudBasico.pdb
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.csprojAssemblyReference.cache
-C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.Form1.resources
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.Properties.Resources.resources
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.csproj.GenerateResource.cache
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.csproj.CoreCompileInputs.cache
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.exe
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.pdb
 C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.frmConsultar.resources
+C:\Users\thiag\source\repos\CrudBasico\CrudBasico\obj\Debug\CrudBasico.frmCadastro.resources

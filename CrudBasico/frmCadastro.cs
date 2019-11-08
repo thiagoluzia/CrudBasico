@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CrudBasico
 {
-    public partial class Form1 : Form
+    public partial class frmCadastro : Form
     {
-        public Form1()
+        public frmCadastro()
         {
             InitializeComponent();
         }
@@ -48,24 +48,27 @@ namespace CrudBasico
 
                 if (rbtAtivo.Checked)
                 {
-                    blnAtivo = true;
                     ativo = 1;
                 }
                 else
                 {
-                    blnAtivo = false;
-                    ativo = 0;
+                    ativo = 1;
                 }
 
                 Gravar(txtNome.Text, txtEndereco.Text, mskTelefone.Text, strSexo, ativo);
             }
+            else
+            {
+                if (String.IsNullOrEmpty(txtNome.Text))
+                {
+                    epError.SetError(txtNome, "Informe o Nome");
+                }
+                if (String.IsNullOrEmpty(txtEndereco.Text))
+                {
+                    epError.SetError(txtEndereco, "Informe o Endereço");
+                }
+            }
         }
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            var objDados = new Dados();
-            objDados.Excluir(Convert.ToInt32(txtExcluir.Text));
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             frmConsultar frm = new frmConsultar();

@@ -1,6 +1,6 @@
 ﻿namespace CrudBasico
 {
-    partial class Form1
+    partial class frmCadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
@@ -41,11 +42,11 @@
             this.gpbStatus = new System.Windows.Forms.GroupBox();
             this.rbtInativo = new System.Windows.Forms.RadioButton();
             this.rbtAtivo = new System.Windows.Forms.RadioButton();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtExcluir = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbSexo.SuspendLayout();
             this.gpbStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,26 +174,9 @@
             this.rbtAtivo.Text = "Ativo";
             this.rbtAtivo.UseVisualStyleBackColor = true;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(101, 253);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(91, 29);
-            this.btnExcluir.TabIndex = 8;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
-            // 
-            // txtExcluir
-            // 
-            this.txtExcluir.Location = new System.Drawing.Point(27, 262);
-            this.txtExcluir.Name = "txtExcluir";
-            this.txtExcluir.Size = new System.Drawing.Size(68, 20);
-            this.txtExcluir.TabIndex = 1;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(101, 299);
+            this.button1.Location = new System.Drawing.Point(198, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 29);
             this.button1.TabIndex = 9;
@@ -200,7 +184,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Form1
+            // epError
+            // 
+            this.epError.ContainerControl = this;
+            // 
+            // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,19 +198,18 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.mskTelefone);
-            this.Controls.Add(this.txtExcluir);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmCadastro";
+            this.Text = "frmCadastro";
             this.gpbSexo.ResumeLayout(false);
             this.gpbSexo.PerformLayout();
             this.gpbStatus.ResumeLayout(false);
             this.gpbStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,9 +230,8 @@
         private System.Windows.Forms.GroupBox gpbStatus;
         private System.Windows.Forms.RadioButton rbtInativo;
         private System.Windows.Forms.RadioButton rbtAtivo;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.TextBox txtExcluir;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }
 

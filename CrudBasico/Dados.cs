@@ -80,8 +80,8 @@ namespace CrudBasico
                             objClientes.IdCliente = Convert.ToInt32(objDataReader["IdCliente"].ToString());
                             objClientes.Nome = objDataReader["Nome"].ToString();
                             objClientes.Endereco = objDataReader["Endereco"].ToString();
+                            objClientes.Telefone = objDataReader["Telefone"].ToString();
                             objClientes.Sexo = objDataReader["Sexo"].ToString();
-
                             if (objDataReader["Ativo"].ToString().Equals("0"))
                             {
                                 objClientes.Ativo = false;
