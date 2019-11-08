@@ -1,26 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace CrudBasico
 {
     public class Dados
     {
+        #region String de Conexao
         //Variavel que recebera a string de conexao
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        #endregion
 
+        #region Codigo SQL
         //variaveis constantes que conteram as instrucoes sql para o crud
         public const string strInsert = "INSERT INTO Clientes VALUES (@Nome, @Endereco, @Telefone, @Sexo, @Ativo, @DataCadastro)";
         public const string strDelete = "DELETE FROM Clientes WHERE IdCliente = @IdCliente";
         public const string strUpdate = "UPDATE Clientes SET Nome = @Nome, Endereco = @Endereco, Telefone = @Telefone, Sexo = @Sexo, Ativo = @Ativo, DataCadastro = @DataCadastro WHERE IdCliente = @IdCliente";
-        public const string strSelect = "SELECT * FROM Clientes";
+        public const string strSelect = "SELECT IdCliente, Nome, Endereco, Telefone, Sexo, Ativo, DataCadastro FROM Clientes";
+        #endregion
 
+        public class Clientes
+        {
+            public int IdCliente { get; set; }
+            public string Nome { get; set; }
+            public string Endereco { get; set; }
+            public string Telefone { get; set; }
+            public string Sexo { get; set; }
+            public bool Ativo { get; set; }
+            public DateTime DataCadastro { get; set; }
+        }
+
+        #region Gravar
         public void Gravar(string Nome, string Endereco, string Telefone, string Sexo, int Ativo, DateTime DataCadastro)
         {
             try
@@ -44,12 +55,58 @@ namespace CrudBasico
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
-            
         }
-        public void Atualizar(int IdCliente,string Nome, string Endereco, string Telefone, string Sexo, bool Ativo, DateTime DataCadastro)
+        #endregion
+
+        #region Consultar
+        public List<Clientes> Consultar()
+        {
+            List<Clientes> lstClientes = new List<Clientes>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelect, objConexao))
+                {
+                    objConexao.Open();
+
+                    SqlDataReader objDataReader = objComando.ExecuteReader();
+                    if (objDataReader.HasRows)
+                    {
+                        while (objDataReader.Read())
+                        {
+                            var objClientes = new Clientes();
+                            objClientes.IdCliente = Convert.ToInt32(objDataReader["IdClientes"].ToString());
+                            objClientes.Nome = objDataReader["Nome"].ToString();
+                            objClientes.Endereco = objDataReader["Endereco"].ToString();
+                            objClientes.Sexo = objDataReader["Sexo"].ToString();
+
+                            if (objDataReader["Ativo"].ToString().Equals("0"))
+                            {
+                                objClientes.Ativo = false;
+                            }
+                            else
+                            {
+                                objClientes.Ativo = true;
+                            }
+
+                            objClientes.DataCadastro = Convert.ToDateTime(objDataReader["DataCadastro"].ToString());
+
+                            lstClientes.Add(objClientes);
+                        }
+                        objDataReader.Close();
+                    }
+                    objConexao.Close();
+                }
+            }
+
+            return lstClientes;
+        }
+        #endregion
+
+        #region Atualizar
+        public void Atualizar(int IdCliente, string Nome, string Endereco, string Telefone, string Sexo, bool Ativo, DateTime DataCadastro)
         {
             using (SqlConnection objetoConexao = new SqlConnection(strConexao))
             {
@@ -69,6 +126,9 @@ namespace CrudBasico
                 }
             }
         }
+        #endregion
+
+        #region Excluir
         public void Excluir(int IdCliente)
         {
             using (SqlConnection objetoConexao = new SqlConnection(strConexao))
@@ -83,5 +143,6 @@ namespace CrudBasico
                 }
             }
         }
+        #endregion
     }
 }
