@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static CrudBasico.Dados;
 
@@ -23,6 +17,7 @@ namespace CrudBasico
             CarregarGridView();
             CarregarListView();
         }
+        //Grid é mais facil
         private void CarregarGridView()
         {
             var objDados = new Dados();
@@ -30,8 +25,8 @@ namespace CrudBasico
 
             lstClientes = objDados.Consultar();
             dgvClientes.DataSource = lstClientes;
-        }
 
+        }
         private void CarregarListView()
         {
             var objDados = new Dados();
@@ -48,20 +43,11 @@ namespace CrudBasico
                 objListViewItem.SubItems.Add(itemLista.Endereco);
                 objListViewItem.SubItems.Add(itemLista.Telefone);
                 objListViewItem.SubItems.Add(itemLista.Sexo);
-
-                if (itemLista.Ativo)
-                {
-                    objListViewItem.SubItems.Add("Sim");
-                }
-                else
-                {
-                    objListViewItem.SubItems.Add("Não");
-                }
+                objListViewItem.SubItems.Add(itemLista.Ativo);
 
                 objListViewItem.SubItems.Add(itemLista.DataCadastro.ToShortDateString());
 
                 lstClientes.Items.Add(objListViewItem);
-                
             }
         }
     }

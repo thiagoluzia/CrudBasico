@@ -27,12 +27,12 @@ namespace CrudBasico
             public string Endereco { get; set; }
             public string Telefone { get; set; }
             public string Sexo { get; set; }
-            public bool Ativo { get; set; }
+            public string Ativo { get; set; }
             public DateTime DataCadastro { get; set; }
         }
 
         #region Gravar
-        public void Gravar(string Nome, string Endereco, string Telefone, string Sexo, int Ativo, DateTime DataCadastro)
+        public void Gravar(string Nome, string Endereco, string Telefone, string Sexo, string Ativo, DateTime DataCadastro)
         {
             try
             {
@@ -82,14 +82,7 @@ namespace CrudBasico
                             objClientes.Endereco = objDataReader["Endereco"].ToString();
                             objClientes.Telefone = objDataReader["Telefone"].ToString();
                             objClientes.Sexo = objDataReader["Sexo"].ToString();
-                            if (objDataReader["Ativo"].ToString().Equals("0"))
-                            {
-                                objClientes.Ativo = false;
-                            }
-                            else
-                            {
-                                objClientes.Ativo = true;
-                            }
+                            objClientes.Ativo = objDataReader["Ativo"].ToString();
 
                             objClientes.DataCadastro = Convert.ToDateTime(objDataReader["DataCadastro"].ToString());
 

@@ -17,7 +17,7 @@ namespace CrudBasico
             InitializeComponent();
         }
 
-        private void Gravar(string Nome, string Endereco, string Telefone, string Sexo, int Ativo)
+        private void Gravar(string Nome, string Endereco, string Telefone, string Sexo, string Ativo)
         {
             try
             {
@@ -34,28 +34,23 @@ namespace CrudBasico
             if (!String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtEndereco.Text))
             {
                 string strSexo = string.Empty;
-                bool blnAtivo = true;
-                int ativo = 0;
-
+                string strAtivo = string.Empty;
+               
                 if (rbtMasculino.Checked)
                 {
                     strSexo = "M";
-                }
-                else
-                {
+                } else {
                     strSexo = "F";
                 }
 
                 if (rbtAtivo.Checked)
                 {
-                    ativo = 1;
-                }
-                else
-                {
-                    ativo = 1;
+                    strAtivo = "Sim";
+                } else {
+                    strAtivo = "Não";
                 }
 
-                Gravar(txtNome.Text, txtEndereco.Text, mskTelefone.Text, strSexo, ativo);
+                Gravar(txtNome.Text, txtEndereco.Text, mskTelefone.Text, strSexo, strAtivo);
             }
             else
             {
