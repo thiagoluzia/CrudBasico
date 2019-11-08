@@ -16,29 +16,38 @@ namespace CrudBasico
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         //variaveis constantes que conteram as instrucoes sql para o crud
-        public const string strInsert = "INSERT INTO Clientes VALUES (@Nome, @Endereco, @Telefone, @Sexo, @Ativo, @DataCadastro";
+        public const string strInsert = "INSERT INTO Clientes VALUES (@Nome, @Endereco, @Telefone, @Sexo, @Ativo, @DataCadastro)";
         public const string strDelete = "DELETE FROM Clientes WHERE IdCliente = @IdCliente";
         public const string strUpdate = "UPDATE Clientes SET Nome = @Nome, Endereco = @Endereco, Telefone = @Telefone, Sexo = @Sexo, Ativo = @Ativo, DataCadastro = @DataCadastro WHERE IdCliente = @IdCliente";
         public const string strSelect = "SELECT * FROM Clientes";
 
-        public void Gravar(string Nome, string Endereco, string Telefone, string Sexo, bool Ativo, DateTime DataCadastro)
+        public void Gravar(string Nome, string Endereco, string Telefone, string Sexo, int Ativo, DateTime DataCadastro)
         {
-            using (SqlConnection objetoConexao = new SqlConnection(strConexao))
+            try
             {
-                using(SqlCommand objetoComando = new SqlCommand(strInsert, objetoConexao))
+                using (SqlConnection objetoConexao = new SqlConnection(strConexao))
                 {
-                    objetoComando.Parameters.AddWithValue("@Nome", Nome);
-                    objetoComando.Parameters.AddWithValue("@Endereco", Endereco);
-                    objetoComando.Parameters.AddWithValue("@Telefone", Telefone);
-                    objetoComando.Parameters.AddWithValue("@Sexo", Sexo);
-                    objetoComando.Parameters.AddWithValue("@Ativo", Ativo);
-                    objetoComando.Parameters.AddWithValue("@DataCadastro", DataCadastro);
+                    using (SqlCommand objetoComando = new SqlCommand(strInsert, objetoConexao))
+                    {
+                        objetoComando.Parameters.AddWithValue("@Nome", Nome);
+                        objetoComando.Parameters.AddWithValue("@Endereco", Endereco);
+                        objetoComando.Parameters.AddWithValue("@Telefone", Telefone);
+                        objetoComando.Parameters.AddWithValue("@Sexo", Sexo);
+                        objetoComando.Parameters.AddWithValue("@Ativo", Ativo);
+                        objetoComando.Parameters.AddWithValue("@DataCadastro", DataCadastro);
 
-                    objetoConexao.Open();
-                    objetoComando.ExecuteNonQuery();
-                    objetoConexao.Close();
+                        objetoConexao.Open();
+                        objetoComando.ExecuteNonQuery();
+                        objetoConexao.Close();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            
         }
         public void Atualizar(int IdCliente,string Nome, string Endereco, string Telefone, string Sexo, bool Ativo, DateTime DataCadastro)
         {

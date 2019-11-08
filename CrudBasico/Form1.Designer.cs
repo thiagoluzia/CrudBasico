@@ -28,13 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.gpbSexo = new System.Windows.Forms.GroupBox();
+            this.rbtFeminino = new System.Windows.Forms.RadioButton();
+            this.btnGravar = new System.Windows.Forms.Button();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbtMasculino = new System.Windows.Forms.RadioButton();
+            this.gpbStatus = new System.Windows.Forms.GroupBox();
+            this.rbtInativo = new System.Windows.Forms.RadioButton();
+            this.rbtAtivo = new System.Windows.Forms.RadioButton();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtExcluir = new System.Windows.Forms.TextBox();
+            this.gpbSexo.SuspendLayout();
+            this.gpbStatus.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(86, 24);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(203, 20);
+            this.txtNome.TabIndex = 1;
+            // 
+            // gpbSexo
+            // 
+            this.gpbSexo.Controls.Add(this.rbtMasculino);
+            this.gpbSexo.Controls.Add(this.rbtFeminino);
+            this.gpbSexo.Location = new System.Drawing.Point(27, 132);
+            this.gpbSexo.Name = "gpbSexo";
+            this.gpbSexo.Size = new System.Drawing.Size(262, 57);
+            this.gpbSexo.TabIndex = 6;
+            this.gpbSexo.TabStop = false;
+            this.gpbSexo.Text = "Sexo";
+            // 
+            // rbtFeminino
+            // 
+            this.rbtFeminino.AutoSize = true;
+            this.rbtFeminino.Location = new System.Drawing.Point(25, 22);
+            this.rbtFeminino.Name = "rbtFeminino";
+            this.rbtFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rbtFeminino.TabIndex = 0;
+            this.rbtFeminino.TabStop = true;
+            this.rbtFeminino.Text = "Feminino";
+            this.rbtFeminino.UseVisualStyleBackColor = true;
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Location = new System.Drawing.Point(198, 253);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(91, 29);
+            this.btnGravar.TabIndex = 8;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.BtnGravar_Click);
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(86, 76);
+            this.mskTelefone.Mask = "(99) 000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 20);
+            this.mskTelefone.TabIndex = 5;
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(86, 50);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(203, 20);
+            this.txtEndereco.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Endereco:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Telefone:";
+            // 
+            // rbtMasculino
+            // 
+            this.rbtMasculino.AutoSize = true;
+            this.rbtMasculino.Location = new System.Drawing.Point(116, 22);
+            this.rbtMasculino.Name = "rbtMasculino";
+            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasculino.TabIndex = 1;
+            this.rbtMasculino.TabStop = true;
+            this.rbtMasculino.Text = "Masculino";
+            this.rbtMasculino.UseVisualStyleBackColor = true;
+            // 
+            // gpbStatus
+            // 
+            this.gpbStatus.Controls.Add(this.rbtInativo);
+            this.gpbStatus.Controls.Add(this.rbtAtivo);
+            this.gpbStatus.Location = new System.Drawing.Point(27, 195);
+            this.gpbStatus.Name = "gpbStatus";
+            this.gpbStatus.Size = new System.Drawing.Size(262, 52);
+            this.gpbStatus.TabIndex = 7;
+            this.gpbStatus.TabStop = false;
+            this.gpbStatus.Text = "Status";
+            // 
+            // rbtInativo
+            // 
+            this.rbtInativo.AutoSize = true;
+            this.rbtInativo.Location = new System.Drawing.Point(116, 19);
+            this.rbtInativo.Name = "rbtInativo";
+            this.rbtInativo.Size = new System.Drawing.Size(57, 17);
+            this.rbtInativo.TabIndex = 1;
+            this.rbtInativo.TabStop = true;
+            this.rbtInativo.Text = "Inativo";
+            this.rbtInativo.UseVisualStyleBackColor = true;
+            // 
+            // rbtAtivo
+            // 
+            this.rbtAtivo.AutoSize = true;
+            this.rbtAtivo.Location = new System.Drawing.Point(25, 19);
+            this.rbtAtivo.Name = "rbtAtivo";
+            this.rbtAtivo.Size = new System.Drawing.Size(49, 17);
+            this.rbtAtivo.TabIndex = 0;
+            this.rbtAtivo.TabStop = true;
+            this.rbtAtivo.Text = "Ativo";
+            this.rbtAtivo.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(101, 253);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(91, 29);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // txtExcluir
+            // 
+            this.txtExcluir.Location = new System.Drawing.Point(27, 262);
+            this.txtExcluir.Name = "txtExcluir";
+            this.txtExcluir.Size = new System.Drawing.Size(68, 20);
+            this.txtExcluir.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(314, 311);
+            this.Controls.Add(this.gpbStatus);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtEndereco);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnGravar);
+            this.Controls.Add(this.gpbSexo);
+            this.Controls.Add(this.mskTelefone);
+            this.Controls.Add(this.txtExcluir);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.gpbSexo.ResumeLayout(false);
+            this.gpbSexo.PerformLayout();
+            this.gpbStatus.ResumeLayout(false);
+            this.gpbStatus.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.GroupBox gpbSexo;
+        private System.Windows.Forms.RadioButton rbtMasculino;
+        private System.Windows.Forms.RadioButton rbtFeminino;
+        private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox gpbStatus;
+        private System.Windows.Forms.RadioButton rbtInativo;
+        private System.Windows.Forms.RadioButton rbtAtivo;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.TextBox txtExcluir;
     }
 }
 
