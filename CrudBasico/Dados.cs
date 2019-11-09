@@ -18,6 +18,7 @@ namespace CrudBasico
         public const string strDelete = "DELETE FROM Clientes WHERE IdCliente = @IdCliente";
         public const string strUpdate = "UPDATE Clientes SET Nome = @Nome, Endereco = @Endereco, Telefone = @Telefone, Sexo = @Sexo, Ativo = @Ativo, DataCadastro = @DataCadastro WHERE IdCliente = @IdCliente";
         public const string strSelect = "SELECT IdCliente, Nome, Endereco, Telefone, Sexo, Ativo, DataCadastro FROM Clientes";
+        public const string strSelectLogin = "SELECT IdLogin, Login, Senha FROM Login WHERE Login = @Login AND Senha = @Senha";
         #endregion
 
         public class Clientes
@@ -29,6 +30,13 @@ namespace CrudBasico
             public string Sexo { get; set; }
             public string Ativo { get; set; }
             public DateTime DataCadastro { get; set; }
+        }
+
+        public class Login
+        {
+            public int IdLogin { get; set; }
+            public string LoginUsuario { get; set; }
+            public string Senha { get; set; }
         }
 
         #region Gravar
@@ -95,6 +103,37 @@ namespace CrudBasico
             }
 
             return lstClientes;
+        }
+        public List<Login> ConsultarLogin(string Login, string Senha)
+        {
+            List<Login> lstLogin = new List<Login>();
+
+            using(SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using(SqlCommand objComando = new SqlCommand(strSelectLogin, objConexao))
+                {
+                    objComando.Parameters.AddWithValue("@Login", Login);
+                    objComando.Parameters.AddWithValue("@Senha", Senha);
+                    objConexao.Open();
+
+                    SqlDataReader objDataReader = objComando.ExecuteReader();
+                    if (objDataReader.HasRows)
+                    {
+                        while (objDataReader.Read())
+                        {
+                            var objLogin = new Login();
+                            objLogin.IdLogin = Convert.ToInt32(objDataReader["IdLogin"].ToString());
+                            objLogin.LoginUsuario = objDataReader["Login"].ToString();
+                            objLogin.Senha = objDataReader["Senha"].ToString();
+
+                            lstLogin.Add(objLogin);
+                        }
+                    }
+                    objDataReader.Close();
+                }
+                objConexao.Close();
+            }
+            return lstLogin;
         }
         #endregion
 
