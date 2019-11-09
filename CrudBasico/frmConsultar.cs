@@ -73,6 +73,16 @@ namespace CrudBasico
                     Sexo = lstClientes.SelectedItems[0].SubItems[4].Text;
                     Ativo = lstClientes.SelectedItems[0].SubItems[5].Text;
                     DataCadastro = Convert.ToDateTime(lstClientes.SelectedItems[0].SubItems[6].Text);
+
+                    frmCadastro objFrmCadastro = new frmCadastro();
+                    objFrmCadastro.Codigo = Codigo;
+                    objFrmCadastro.Nome = Nome;
+                    objFrmCadastro.Endereco = Endereco;
+                    objFrmCadastro.Telefone = Telefone;
+                    objFrmCadastro.Sexo = Sexo;
+                    objFrmCadastro.Ativo = Ativo;
+                    objFrmCadastro.DataCadastro = DataCadastro;
+                    objFrmCadastro.ShowDialog();
                 }
             }
             catch (Exception ex)

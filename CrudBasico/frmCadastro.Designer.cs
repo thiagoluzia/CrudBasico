@@ -205,6 +205,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastro";
             this.Text = "frmCadastro";
+            this.Load += new System.EventHandler(this.FrmCadastro_Load);
             this.gpbSexo.ResumeLayout(false);
             this.gpbSexo.PerformLayout();
             this.gpbStatus.ResumeLayout(false);

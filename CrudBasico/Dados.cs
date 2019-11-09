@@ -99,7 +99,7 @@ namespace CrudBasico
         #endregion
 
         #region Atualizar
-        public void Atualizar(int IdCliente, string Nome, string Endereco, string Telefone, string Sexo, bool Ativo, DateTime DataCadastro)
+        public void Atualizar(int IdCliente, string Nome, string Endereco, string Telefone, string Sexo, string Ativo, DateTime DataCadastro)
         {
             using (SqlConnection objetoConexao = new SqlConnection(strConexao))
             {
