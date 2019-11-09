@@ -39,6 +39,8 @@
             this.DataCadastro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEditarDGV = new System.Windows.Forms.Button();
+            this.btnExcluirDGV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,8 @@
             this.DataCadastro});
             this.lstClientes.FullRowSelect = true;
             this.lstClientes.GridLines = true;
-            this.lstClientes.Location = new System.Drawing.Point(12, 206);
+            this.lstClientes.Location = new System.Drawing.Point(12, 312);
+            this.lstClientes.MultiSelect = false;
             this.lstClientes.Name = "lstClientes";
             this.lstClientes.Size = new System.Drawing.Size(562, 168);
             this.lstClientes.TabIndex = 1;
@@ -108,27 +111,49 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(483, 380);
+            this.btnExcluir.Location = new System.Drawing.Point(483, 486);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(91, 29);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(386, 380);
+            this.btnEditar.Location = new System.Drawing.Point(386, 486);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(91, 29);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // btnEditarDGV
+            // 
+            this.btnEditarDGV.Location = new System.Drawing.Point(386, 195);
+            this.btnEditarDGV.Name = "btnEditarDGV";
+            this.btnEditarDGV.Size = new System.Drawing.Size(91, 29);
+            this.btnEditarDGV.TabIndex = 5;
+            this.btnEditarDGV.Text = "Editar";
+            this.btnEditarDGV.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluirDGV
+            // 
+            this.btnExcluirDGV.Location = new System.Drawing.Point(483, 195);
+            this.btnExcluirDGV.Name = "btnExcluirDGV";
+            this.btnExcluirDGV.Size = new System.Drawing.Size(91, 29);
+            this.btnExcluirDGV.TabIndex = 4;
+            this.btnExcluirDGV.Text = "Excluir";
+            this.btnExcluirDGV.UseVisualStyleBackColor = true;
             // 
             // frmConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 546);
+            this.Controls.Add(this.btnEditarDGV);
+            this.Controls.Add(this.btnExcluirDGV);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lstClientes);
@@ -157,5 +182,7 @@
         private System.Windows.Forms.ColumnHeader DataCadastro;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEditarDGV;
+        private System.Windows.Forms.Button btnExcluirDGV;
     }
 }

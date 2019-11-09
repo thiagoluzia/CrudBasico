@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CrudBasico
@@ -17,6 +10,17 @@ namespace CrudBasico
             InitializeComponent();
         }
 
+        #region Variaveis publicas
+        public int Codigo;
+        public string Nome;
+        public string Endereco;
+        public string Telefone;
+        public string Sexo;
+        public string Ativo;
+        public DateTime DataCadastro;
+        #endregion
+
+        #region Metodos
         private void Gravar(string Nome, string Endereco, string Telefone, string Sexo, string Ativo)
         {
             try
@@ -29,6 +33,9 @@ namespace CrudBasico
                 MessageBox.Show($"Ocorreu algum erro: {ex.Message}");
             }
         }
+        #endregion
+
+        #region Botoes
         private void BtnGravar_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtEndereco.Text))
@@ -69,5 +76,6 @@ namespace CrudBasico
             frmConsultar frm = new frmConsultar();
             frm.ShowDialog();
         }
+        #endregion
     }
 }
